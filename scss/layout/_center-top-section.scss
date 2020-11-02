@@ -1,0 +1,56 @@
+.midSection {
+    width: 100%;
+    padding: 20rem 0;
+    text-align: center;
+    background-image: linear-gradient(to right bottom, $alpha-light-green, $alpha-light-green), url("../img/bike.jpg");
+    background-size: cover;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    transform: skewY(-7deg);
+    margin-top: -10rem;
+
+    & .main-mid-section {
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        justify-content: space-around;
+        transform: skewY(7deg);
+
+        & .authorSection {
+            flex-basis: calc(22.5%);
+            padding: 2.5rem;
+            background-color: rgba($color-white, .8);
+            border-radius: .3rem;
+            box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+            transition: all .3s;
+
+            &:hover {
+                transform: translateY(-3rem) scale(1.1);
+            }
+
+            & .icon {
+                display: inline-block;
+                font-size: 7rem;
+                font-weight: 700;
+                margin-bottom: 1.5rem;
+                background: linear-gradient(to right, $light-green, $dark-green);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+            }
+
+            & .headingMid {
+                font-size: $font-default;
+                font-weight: 700;
+                text-transform: uppercase;
+                margin-bottom: 1.5rem;
+            }
+
+            & .praGe {
+                font-size: $font-default;
+                font-weight: 300;
+            }
+        }
+    }
+}

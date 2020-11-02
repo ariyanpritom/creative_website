@@ -1,0 +1,151 @@
+.navigation {
+
+    & .navCheckBox {
+        display: none;
+
+        &:checked~.background {
+            transform: scale(80);
+            visibility: visible;
+        }
+
+        &:checked~.navPoint {
+            width: 100%;
+            opacity: 1;
+        }
+
+        &:checked~.navLab span {
+            background-color: transparent;
+        }
+
+        &:checked~.navLab span::before {
+            transform: rotate(135deg);
+            top: 0;
+        }
+
+        &:checked~.navLab span::after {
+            transform: rotate(-135deg);
+            top: 0;
+        }
+    }
+
+    & .navLab {
+        position: fixed;
+        width: 7rem;
+        height: 7rem;
+        background-color: $color-white;
+        border-radius: 50%;
+        top: 6rem;
+        right: 6rem;
+        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        z-index: 20;
+        cursor: pointer;
+
+        &:hover span::before {
+            top: -1.2rem;
+        }
+
+        &:hover span::after {
+            top: 1.2rem;
+        }
+
+        & span {
+            display: inline-block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 70%;
+            height: .2rem;
+            background-color: $medium-green;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                display: inline-block;
+                width: 100%;
+                height: 100%;
+                background-color: $medium-green;
+                left: 0;
+                transition: all .2s;
+
+            }
+
+            &::before {
+                top: -1rem;
+            }
+
+            &::after {
+                top: 1rem;
+            }
+        }
+    }
+
+    & .background {
+        position: fixed;
+        width: 6rem;
+        height: 6rem;
+        background: linear-gradient(to left bottom, $light-green, $medium-green, $dark-green);
+        border-radius: 50%;
+        top: 6.5rem;
+        right: 6.5rem;
+        visibility: hidden;
+        transition: all .8s cubic-bezier(0.86, 0, 0.07, 1);
+        z-index: 10;
+
+    }
+
+    & .navPoint {
+        position: fixed;
+        width: 0%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all .8s cubic-bezier(0.86, -0.55, 0.265, 1.55);
+        z-index: 15;
+
+        & .navList {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            & .navItem {
+                margin: 3rem;
+                list-style: none;
+                text-align: center;
+
+                & .linkTon {
+
+                    &:link,
+                    &:visited {
+                        display: inline-block;
+                        text-decoration: none;
+                        font-size: 3rem;
+                        padding: 1rem 2rem;
+                        font-weight: 300;
+                        text-transform: uppercase;
+                        color: $color-white;
+                        background: linear-gradient(120deg, transparent 0%, transparent 50%, $color-white 50%);
+                        background-size: 220%;
+                        transition: all .4s;
+                    }
+
+                    &:hover,
+                    &:active {
+                        background-position: 100%;
+                        color: $medium-green;
+                        transform: translateX(1rem);
+                    }
+
+                    & span {
+                        display: inline-block;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}

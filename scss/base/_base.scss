@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    &::selection {
+        color: $color-white;
+        background-color: $medium-green;
+    }
+}
+
+html {
+    font-size: $font-root; // 1rem == 10px
+
+    @include respond(big-Desktop) {
+        font-size: 75%; // 1rem == 12px
+    }
+
+    @include respond(tab-land) {
+        font-size: 62.25%; // 1rem == 9px
+    }
+
+    @include respond(tab-port) {
+        font-size: 50%; // 1rem == 8px
+    }
+
+    @include respond(phone) {
+        font-size: 31.25%; // 1rem == 5px
+    }
+}
+
+body {
+    padding: 3rem;
+    font-family: 'Lato', sans-serif;
+    // font-size: 1.6rem;
+    line-height: 1.7;
+    color: $color-grey;
+    display: flex;
+    flex-direction: column;
+}

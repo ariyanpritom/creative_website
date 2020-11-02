@@ -1,0 +1,625 @@
+.pointSection {
+
+    & .pointMain {
+        width: 100%;
+        padding: 25rem 0;
+        margin-top: -10rem;
+        background-color: $color-light-grey;
+
+        & .center-align,
+        .bottom-margin-large {
+
+            & .heading-point {
+                font-size: 3.5rem;
+                font-weight: 700;
+                letter-spacing: .2rem;
+                text-transform: uppercase;
+                display: inline-block;
+                background: linear-gradient(to right, $light-green, $dark-green);
+                -webkit-background-clip: text;
+                background-clip: text;
+                color: transparent;
+                transition: all .2s;
+
+                &:hover {
+                    transform: skew(15deg, 2deg) scale(1.1);
+                    text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+                }
+            }
+        }
+
+        & .pointBomb {
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-around;
+
+            & .wonderPs {
+                flex-basis: calc(30%);
+            }
+
+            & .cardOne {
+                height: 50rem;
+                perspective: 150rem;
+                position: relative;
+
+                &:hover .contentCardOne {
+                    transform: rotateY(180deg);
+                }
+
+                &:hover .contentOneFont {
+                    transform: rotateY(-180deg);
+                }
+
+                &:hover .contentOneBack {
+                    transform: rotateY(0deg);
+
+                }
+
+                & .contentCardOne {
+                    width: 100%;
+                    height: 50rem;
+                    border-radius: .3rem;
+                    overflow: hidden;
+                    transition: all .9s ease;
+                    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    backface-visibility: hidden;
+                }
+
+                & .contentOneFont {
+                    position: relative;
+
+                    & .fontPic01 {
+                        width: 100%;
+                        height: 23rem;
+                        background-image: linear-gradient(to right bottom, rgba($light-orange, 0.8), rgba($dark-orange, 0.8)), url("../img/sectionPower01.jpg");
+                        background-position: center;
+                        background-size: cover;
+                        background-blend-mode: screen;
+                        clip-path: polygon(0% 0%, 0% 100%, 100% 75%, 100% 0);
+                        position: absolute;
+                    }
+
+                    & .orderCentre {
+                        text-align: right;
+                        position: absolute;
+                        top: 12rem;
+                        right: 3rem;
+
+                        & .headBomb01 {
+                            color: $color-white;
+                            text-transform: uppercase;
+                            font-size: 2.8rem;
+                            font-weight: 300;
+
+                            & span {
+                                padding: .5rem 1.5rem;
+                            }
+
+                            & span:first-child {
+                                background: linear-gradient(to right bottom, rgba($light-orange, .85), rgba($dark-orange, .85));
+                                display: inline-block;
+                            }
+
+                            & span:last-child {
+                                background: linear-gradient(to right bottom, rgba($light-orange, .85), rgba($dark-orange, .85));
+                                display: block;
+                            }
+                        }
+                    }
+
+                    & .mainList01 {
+                        width: 70%;
+                        top: 50%;
+                        left: 50%;
+                        text-align: center;
+                        transform: translate(-50%);
+                        position: absolute;
+
+                        & ul {
+                            list-style: none;
+
+                            & li {
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                                padding: 1rem;
+
+                                &:not(:last-child) {
+                                    border-bottom: .1rem solid $color-mid-medium;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .contentOneBack {
+                    background: linear-gradient(to right bottom, $light-orange, $dark-orange);
+                    transform: rotateY(180deg);
+
+                    & .vas-bomb {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+
+                        & .vas-main {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 20%;
+                            left: 50%;
+                            transform: translate(-50%);
+                            text-align: center;
+
+                            & .price-bomb {
+                                color: $color-white;
+                                text-transform: uppercase;
+
+                                & span {
+                                    display: block;
+
+                                    &:not(:last-child) {
+                                        margin-bottom: 1.5rem;
+                                    }
+
+                                    &:first-child {
+                                        font-size: 1.7rem;
+                                        font-size: 500;
+                                    }
+
+                                    &:last-child {
+                                        font-size: 6.5rem;
+                                        font-weight: 300;
+                                    }
+                                }
+                            }
+                        }
+
+                        & .inBtn {
+                            position: absolute;
+                            top: 65%;
+                            left: 50%;
+                            transform: translate(-50%);
+
+                            & .btnOver:link,
+                            .btnOver:visited {
+                                background-color: $color-white;
+                                color: $color-grey;
+                                display: inline-block;
+                                padding: 1.5rem 4rem;
+                                text-decoration: none;
+                                border-radius: 10rem;
+                                text-transform: uppercase;
+                                transition: all .2s;
+                                position: relative;
+                                animation-name: headerButton;
+                                animation-duration: .5s;
+                                animation-delay: .75s;
+                                animation-timing-function: ease-out;
+                                animation-fill-mode: backwards;
+
+
+                                &:hover {
+                                    transform: translateY(-.3rem);
+                                    box-shadow: 0 1rem 2rem $shadow-color;
+                                }
+
+                                &:active {
+                                    transform: translateY(-.1rem);
+                                    box-shadow: 0 .5rem 1rem $shadow-color;
+                                }
+
+                                &::after {
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 10rem;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: -1;
+                                    background-color: $color-white;
+                                    transition: all .4s;
+                                }
+
+                                &:hover::after {
+                                    transform: scale(1.5);
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .cardTwo {
+                height: 50rem;
+                perspective: 150rem;
+                position: relative;
+
+                &:hover .contentCardTwo {
+                    transform: rotateY(180deg);
+                }
+
+                &:hover .contentTwoFont {
+                    transform: rotateY(-180deg);
+                }
+
+                &:hover .contentTwoBack {
+                    transform: rotateY(0deg);
+                }
+
+                & .contentCardTwo {
+                    width: 100%;
+                    height: 50rem;
+                    border-radius: .3rem;
+                    overflow: hidden;
+                    transition: all .9s ease;
+                    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    backface-visibility: hidden;
+                }
+
+                & .contentTwoFont {
+                    .fontPic02 {
+                        width: 100%;
+                        height: 23rem;
+                        background-image: linear-gradient(to right bottom, rgba($light-green, 0.8), rgba($dark-green, 0.8)), url("../img/sectionPower02.jpg");
+                        background-position: center;
+                        background-size: cover;
+                        background-blend-mode: screen;
+                        clip-path: polygon(0% 0%, 0% 100%, 100% 75%, 100% 0);
+                    }
+
+                    & .orderCentre {
+                        text-align: right;
+                        position: absolute;
+                        top: 12rem;
+                        right: 3rem;
+
+                        & .headBomb02 {
+                            color: $color-white;
+                            text-transform: uppercase;
+                            font-size: 2.8rem;
+                            font-weight: 300;
+
+                            & span {
+                                padding: .5rem 1.5rem;
+                            }
+
+                            & span:first-child {
+                                background: linear-gradient(to right bottom, rgba($light-green, .85), rgba($dark-green, .85));
+                                display: inline-block;
+                            }
+
+                            & span:last-child {
+                                background: linear-gradient(to right bottom, rgba($light-green, .85), rgba($dark-green, .85));
+                                display: block;
+                            }
+                        }
+                    }
+
+                    & .mainList02 {
+                        width: 70%;
+                        top: 50%;
+                        left: 50%;
+                        text-align: center;
+                        transform: translate(-50%);
+                        position: absolute;
+
+                        & ul {
+                            list-style: none;
+
+                            & li {
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                                padding: 1rem;
+
+                                &:not(:last-child) {
+                                    border-bottom: .1rem solid $color-mid-medium;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .contentTwoBack {
+                    background: linear-gradient(to right bottom, $light-green, $dark-green);
+                    transform: rotateY(180deg);
+
+                    & .vas-bomb {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+
+                        & .vas-main {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 20%;
+                            left: 50%;
+                            transform: translate(-50%);
+                            text-align: center;
+
+                            & .price-bomb {
+                                color: $color-white;
+                                text-transform: uppercase;
+
+                                & span {
+                                    display: block;
+
+                                    &:not(:last-child) {
+                                        margin-bottom: 1.5rem;
+                                    }
+
+                                    &:first-child {
+                                        font-size: 1.7rem;
+                                        font-size: 500;
+                                    }
+
+                                    &:last-child {
+                                        font-size: 6.5rem;
+                                        font-weight: 300;
+                                    }
+                                }
+                            }
+                        }
+
+                        & .inBtn {
+                            position: absolute;
+                            top: 65%;
+                            left: 50%;
+                            transform: translate(-50%);
+
+                            & .btnOver:link,
+                            .btnOver:visited {
+                                background-color: $color-white;
+                                color: $color-grey;
+                                display: inline-block;
+                                padding: 1.5rem 4rem;
+                                text-decoration: none;
+                                border-radius: 10rem;
+                                text-transform: uppercase;
+                                transition: all .2s;
+                                position: relative;
+                                animation-name: headerButton;
+                                animation-duration: .5s;
+                                animation-delay: .75s;
+                                animation-timing-function: ease-out;
+                                animation-fill-mode: backwards;
+
+
+                                &:hover {
+                                    transform: translateY(-.3rem);
+                                    box-shadow: 0 1rem 2rem $shadow-color;
+                                }
+
+                                &:active {
+                                    transform: translateY(-.1rem);
+                                    box-shadow: 0 .5rem 1rem $shadow-color;
+                                }
+
+                                &::after {
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 10rem;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: -1;
+                                    background-color: $color-white;
+                                    transition: all .4s;
+                                }
+
+                                &:hover::after {
+                                    transform: scale(1.5);
+                                    opacity: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .cardThree {
+                height: 50rem;
+                perspective: 150rem;
+                position: relative;
+
+                &:hover .contentCardThree {
+                    transform: rotateY(180deg);
+                }
+
+                &:hover .contentThreeFont {
+                    transform: rotateY(-180deg);
+                }
+
+                &:hover .contentThreeBack {
+                    transform: rotateY(0deg);
+                }
+
+                & .contentCardThree {
+                    width: 100%;
+                    height: 50rem;
+                    border-radius: .3rem;
+                    overflow: hidden;
+                    transition: all .9s ease;
+                    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    backface-visibility: hidden;
+                }
+
+                & .contentThreeFont {
+                    .fontPic03 {
+                        width: 100%;
+                        height: 23rem;
+                        background-image: linear-gradient(to right bottom, rgba($light-blue, 0.8), rgba($dark-blue, 0.8)), url("../img/sectionPower03.jpg");
+                        background-position: center;
+                        background-size: cover;
+                        background-blend-mode: screen;
+                        clip-path: polygon(0% 0%, 0% 100%, 100% 75%, 100% 0);
+                    }
+
+                    & .orderCentre {
+                        text-align: right;
+                        position: absolute;
+                        top: 12rem;
+                        right: 3rem;
+
+                        & .headBomb03 {
+                            color: $color-white;
+                            text-transform: uppercase;
+                            font-size: 2.8rem;
+                            font-weight: 300;
+
+
+                            & span {
+                                padding: .5rem 1.5rem;
+                            }
+
+                            & span:first-child {
+                                background: linear-gradient(to right bottom, rgba($light-blue, .85), rgba($dark-blue, .85));
+                                display: inline-block;
+                            }
+
+                            & span:last-child {
+                                background: linear-gradient(to right bottom, rgba($light-blue, .85), rgba($dark-blue, .85));
+                                display: block;
+                            }
+                        }
+                    }
+
+                    & .mainList03 {
+                        width: 70%;
+                        top: 50%;
+                        left: 50%;
+                        text-align: center;
+                        transform: translate(-50%);
+                        position: absolute;
+
+                        & ul {
+                            list-style: none;
+
+                            & li {
+                                font-size: 1.5rem;
+                                font-weight: 500;
+                                padding: 1rem;
+
+                                &:not(:last-child) {
+                                    border-bottom: .1rem solid $color-mid-medium;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                & .contentThreeBack {
+                    background: linear-gradient(to right bottom, $light-blue, $dark-blue);
+                    transform: rotateY(180deg);
+
+                    & .vas-bomb {
+                        width: 100%;
+                        height: 100%;
+                        position: relative;
+
+                        & .vas-main {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            top: 20%;
+                            left: 50%;
+                            transform: translate(-50%);
+                            text-align: center;
+
+                            & .price-bomb {
+                                color: $color-white;
+                                text-transform: uppercase;
+
+                                & span {
+                                    display: block;
+
+                                    &:not(:last-child) {
+                                        margin-bottom: 1.5rem;
+                                    }
+
+                                    &:first-child {
+                                        font-size: 1.7rem;
+                                        font-size: 500;
+                                    }
+
+                                    &:last-child {
+                                        font-size: 6.5rem;
+                                        font-weight: 300;
+                                    }
+                                }
+                            }
+                        }
+
+                        & .inBtn {
+                            position: absolute;
+                            top: 65%;
+                            left: 50%;
+                            transform: translate(-50%);
+
+                            & .btnOver:link,
+                            .btnOver:visited {
+                                background-color: $color-white;
+                                color: $color-grey;
+                                display: inline-block;
+                                padding: 1.5rem 4rem;
+                                text-decoration: none;
+                                border-radius: 10rem;
+                                text-transform: uppercase;
+                                transition: all .2s;
+                                position: relative;
+                                animation-name: headerButton;
+                                animation-duration: .5s;
+                                animation-delay: .75s;
+                                animation-timing-function: ease-out;
+                                animation-fill-mode: backwards;
+
+
+                                &:hover {
+                                    transform: translateY(-.3rem);
+                                    box-shadow: 0 1rem 2rem $shadow-color;
+                                }
+
+                                &:active {
+                                    transform: translateY(-.1rem);
+                                    box-shadow: 0 .5rem 1rem $shadow-color;
+                                }
+
+                                &::after {
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    border-radius: 10rem;
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    z-index: -1;
+                                    background-color: $color-white;
+                                    transition: all .4s;
+                                }
+
+                                &:hover::after {
+                                    transform: scale(1.5);
+                                    opacity: 0;
+
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

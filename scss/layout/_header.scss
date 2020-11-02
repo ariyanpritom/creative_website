@@ -1,0 +1,108 @@
+header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom, $alpha-light-green, $alpha-light-green), url("../img/header.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75vh, 0% 100%);
+    position: relative;
+
+    & .brand {
+        position: absolute;
+        top: 1.5rem;
+        left: 1.5rem;
+
+        & .logo {
+            font-size: 4rem;
+            color: $color-white;
+        }
+    }
+
+    & .text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+
+
+        & .main-box {
+            text-transform: uppercase;
+            color: $color-white;
+            margin-bottom: 6rem;
+
+
+            & .up-box {
+                display: block;
+                font-size: 6rem;
+                font-weight: 400;
+                letter-spacing: 3.5rem;
+                animation-name: headerFirst;
+                animation-duration: 1.4s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: backwards;
+            }
+
+            & .down-box {
+                display: block;
+                font-size: 2rem;
+                font-weight: 400;
+                letter-spacing: .6rem;
+                animation-name: headerSecond;
+                animation-duration: 1.4s;
+                animation-timing-function: ease-out;
+                animation-fill-mode: backwards;
+            }
+        }
+
+        & .btn:link,
+        .btn:visited {
+            background-color: $color-white;
+            color: $color-grey;
+            display: inline-block;
+            padding: 1.5rem 4rem;
+            text-decoration: none;
+            border-radius: 10rem;
+            font-size: $font-default;
+            font-weight: 500;
+            text-transform: uppercase;
+            transition: all .2s;
+            position: relative;
+            animation-name: headerButton;
+            animation-duration: .5s;
+            animation-delay: .75s;
+            animation-timing-function: ease-out;
+            animation-fill-mode: backwards;
+
+
+            &:hover {
+                transform: translateY(-.3rem);
+                box-shadow: 0 1rem 2rem $shadow-color;
+            }
+
+            &:active {
+                transform: translateY(-.1rem);
+                box-shadow: 0 .5rem 1rem $shadow-color;
+            }
+
+            &::after {
+                content: "";
+                width: 100%;
+                height: 100%;
+                border-radius: 10rem;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                background-color: $color-white;
+                transition: all .4s;
+            }
+
+            &:hover::after {
+                transform: scale(1.5);
+                opacity: 0;
+
+            }
+        }
+    }
+}

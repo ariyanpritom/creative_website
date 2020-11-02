@@ -1,0 +1,38 @@
+// COLOR
+$color-grey: #777;
+$color-mid-medium: #eee;
+$color-light-grey: #f7f7f7;
+$color-dark-grey: #333;
+$color-white: #fff;
+$color-black: #000;
+
+$light-green: #7ed56f;
+$medium-green: #55c57a;
+$dark-green: #28b485;
+
+$light-orange: #ffb900;
+$dark-orange: #ff7730;
+
+$light-blue: #2998ff;
+$dark-blue: #5643fa;
+
+
+
+$alpha-light-green: rgba(126, 213, 111, 0.8);
+$alpha-dark-green: rgba(40, 180, 133, 0.8);
+
+$light-orangered: rgba(246, 130, 35, 0.8);
+$dark-orangered: rgba(233, 86, 37, 0.8);
+
+$shadow-color: rgba(0,0,0,.2);
+
+
+
+// FONT
+
+// font: 16px = 100%;
+// Then, 10px = 62.5%;
+// is-     (10*100)/16;
+
+$font-root: 62.5%;
+$font-default: 1.6rem;

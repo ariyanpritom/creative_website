@@ -1,0 +1,213 @@
+.defineSection {
+    background-color: orangered;
+    padding: 10rem;
+    background: linear-gradient(to right bottom, $light-green, $dark-green);
+
+    & .endSection {
+        background-image: url("../img/snow.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        height: 55rem;
+        border-radius: .3em;
+        display: flex;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        & .endMod {
+            padding: 5rem;
+        }
+
+        & .endLeft {
+            flex-basis: 60%;
+            background: rgba($color-white, .7);
+            clip-path: polygon(0% 0%, 100% 0%, 75% 100%, 0% 100%);
+            border-top-left-radius: .3rem;
+            border-bottom-left-radius: .3rem;
+
+            & .bottom-margin-medium {
+
+                & .headerSmallDeeper {
+                    font-size: 3.5rem;
+                    font-weight: 700;
+                    letter-spacing: .2rem;
+                    text-transform: uppercase;
+                    display: inline-block;
+                    background: linear-gradient(to right, $light-green, $dark-green);
+                    -webkit-background-clip: text;
+                    background-clip: text;
+                    color: transparent;
+                    transition: all .2s;
+
+                    &:hover {
+                        transform: skew(15deg, 2deg) scale(1.1);
+                        text-shadow: .5rem 1rem 2rem rgba($color-black, .2);
+                    }
+                }
+            }
+
+            & .formBoom {
+                width: 60%;
+
+                & .inputMain {
+
+                    & input {
+                        padding: 1.3rem;
+                        display: block;
+                        width: 100%;
+                        border-radius: .3rem;
+                        border: none;
+                        font-size: 1.5rem;
+                        font-weight: 500;
+                        border-bottom: .3rem solid transparent;
+                        background-color: rgba($color-white, .7);
+                        transition: all .3s;
+                        margin-bottom: 1rem;
+
+                        &:focus {
+                            outline: none;
+                            color: $color-grey;
+                            border-bottom: .3rem solid $medium-green;
+                            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+                        }
+
+                        &:focus:invalid {
+                            border-bottom: .3rem solid $dark-orange;
+                        }
+
+                        &:placeholder-shown+label {
+                            visibility: hidden;
+                            opacity: 0;
+                        }
+                    }
+
+                    & label {
+                        margin-left: 1.3rem;
+                        font-size: 1.5rem;
+                        margin-bottom: 1rem;
+                        display: inline-block;
+                        transition: .3s;
+                    }
+                }
+
+                & .radioMount {
+
+                    & .radio {
+                        font-size: $font-default;
+                        font-weight: 500;
+                        text-transform: capitalize;
+                        display: inline-block;
+                        position: relative;
+                        vertical-align: middle;
+                        position: relative;
+                        cursor: pointer;
+
+                        &:not(:last-child){
+                            margin-right: 7rem;
+                        }
+
+                        & input[type=radio] {
+                            display: none;
+
+                            &:checked+span::after {
+                                transform: translate(-50%, -50%) scale(1);
+                            }
+                        }
+
+                        & span {
+                            display: inline-block;
+                            position: absolute;
+                            position: relative;
+                            border-radius: 50%;
+                            border: .5rem solid $medium-green;
+                            width: 3.5rem;
+                            height: 3.5rem;
+                            top: 30%;
+                            left: 50%;
+                            top: 1rem;
+                            left: 0%;
+                            margin-right: 1.3rem;
+
+                            &::after {
+                                content: "";
+                                width: 50%;
+                                height: 50%;
+                                border-radius: 50%;
+                                display: inline-block;
+                                background-color: $medium-green;
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%) scale(0);
+                                transition: .3s;
+                            }
+                        }
+
+                    }
+                }
+
+                & .btn:link,
+                .btn:visited {
+                    background: linear-gradient(to right, $light-green, $dark-green);
+                    display: inline-block;
+                    text-decoration: none;
+                    border-radius: 10rem;
+                    transition: all .2s;
+                    position: relative;
+                    margin-top: 7rem;
+
+                    & input[type = submit]{
+                        font-size: $font-default;
+                        text-transform: uppercase;
+                        color: $color-white;
+                        display: inline-block;
+                        font-weight: 500;
+                        width: 100%;
+                        height: 100%;
+                        padding: 1.7rem 4rem;
+                        border-radius: 10rem;
+                        background-color: transparent;
+                        border:none;
+                        outline: none;
+                        cursor: pointer;
+
+                    }
+        
+        
+                    &:hover {
+                        transform: translateY(-.3rem);
+                        box-shadow: 0 1rem 2rem $shadow-color;
+                    }
+        
+                    &:active {
+                        transform: translateY(-.1rem);
+                        box-shadow: 0 .5rem 1rem $shadow-color;
+                    }
+        
+                    &::after {
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10rem;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: -1;
+                        background: linear-gradient(to right, $light-green, $dark-green);
+                        transition: all .4s;
+                    }
+        
+                    &:hover::after {
+                        transform: scale(1.5);
+                        opacity: 0;
+        
+                    }
+                }
+            }
+        }
+
+        & .endRight {
+            flex-basis: 40%;
+        }
+    }
+}
